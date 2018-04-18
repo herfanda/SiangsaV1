@@ -2,8 +2,16 @@
     <string name="app_name">SiangsaV1</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_greeting">Selamat Datang</string>
+    <string name="nav_header_username">Paijo Sarmin</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    
+    <string name="left_menu_paket">Paket</string>
+    <string name="left_menu_layanan">Layanan</string>
+    <string name="left_menu_tagihan">Tagihan</string>
+    <string name="left_menu_lapor">Laport</string>
+    <string name="left_menu_info">Info</string>
+    
+    
 </resources>
