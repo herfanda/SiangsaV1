@@ -3,7 +3,7 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_greeting">Selamat Datang</string>
-    <string name="nav_header_username">Paijo Sarmin</string>
+    <string name="nav_header_username">Dedek Cantik</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     
@@ -12,6 +12,11 @@
     <string name="left_menu_tagihan">Tagihan</string>
     <string name="left_menu_lapor">Laport</string>
     <string name="left_menu_info">Info</string>
-    
-    
+
+    <string name="txt_welcome_login">Selamat datang di layanan SIANGSA !</string>
+    <string name="txt_welcome_login_details">Masukan data email dan kata sandi Anda dengan benar untuk masuk ke dashboard akun</string>
+    <string name="txt_login_email">Email</string>
+    <string name="txt_login_password">Password</string>
+
+
 </resources>
