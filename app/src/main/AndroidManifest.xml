@@ -19,8 +19,15 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".activity.LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
 
-        <activity android:name=".activity.HomePageActivity"></activity>
+        <activity
+            android:name=".activity.HomePageActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
 
     </application>
 
