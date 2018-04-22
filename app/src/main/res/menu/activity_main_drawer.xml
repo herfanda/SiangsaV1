@@ -6,24 +6,24 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_paket"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_side_packet"
             android:title="@string/left_menu_paket" />
         <item
             android:id="@+id/nav_layanan"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_side_layanan"
             android:title="@string/left_menu_layanan" />
         <item
             android:id="@+id/nav_tagihan"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_side_tagihan"
             android:title="@string/left_menu_tagihan" />
         <item
             android:id="@+id/nav_lapor"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_side_lapor"
             android:title="@string/left_menu_lapor" />
 
         <item
             android:id="@+id/nav_info"
-            android:icon="@drawable/ic_menu_share"
+            android:icon="@drawable/ic_side_info"
             android:title="@string/left_menu_info" />
     </group>
 

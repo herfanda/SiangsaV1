@@ -34,6 +34,9 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.btn_login);
         txtForgot = findViewById(R.id.txt_lupa);
 
+        edtEmail.setText("usertest");
+        edtPassword.setText("usertest");
+
     }
 
 
