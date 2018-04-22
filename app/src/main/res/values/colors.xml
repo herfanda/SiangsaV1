@@ -26,6 +26,20 @@
     <color name="default_black">#000000</color>
     <color name="light_grey">#DCDCDC</color>
 
+    <array name="array_dot_active">
+        <item>@color/orange_50</item>
+        <item>@color/orange_50</item>
+        <item>@color/orange_50</item>
+        <item>@color/orange_50</item>
+    </array>
+
+    <array name="array_dot_inactive">
+        <item>@color/orange_400</item>
+        <item>@color/orange_400</item>
+        <item>@color/orange_400</item>
+        <item>@color/orange_400</item>
+    </array>
+
 
 
 </resources>
