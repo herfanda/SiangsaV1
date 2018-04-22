@@ -18,6 +18,12 @@
     <string name="txt_login_email">Email</string>
     <string name="txt_login_password">Password</string>
     <string name="txt_login_forgot"><u>Lupa Kata Sandi</u></string>
+    
+    <string name="label_id_layanan">No ID Layanan</string>
+    <string name="label_nama">Nama</string>
+    <string name="label_alamat">Alamat</string>
+    <string name="label_nomor_tel">Nomor Telepon</string>
+    <string name="label_email">Email</string>
 
 
 
