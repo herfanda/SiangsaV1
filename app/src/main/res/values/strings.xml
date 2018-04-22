@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SiangsaV1</string>
+    <string name="app_name">Siangsa</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_greeting">Selamat Datang</string>
@@ -24,6 +24,26 @@
     <string name="label_alamat">Alamat</string>
     <string name="label_nomor_tel">Nomor Telepon</string>
     <string name="label_email">Email</string>
+
+    <string name="title_activity_welcome">Home Screen</string>
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
+    <string name="slide_1_title">Layanan Paket Satu</string>
+    <string name="slide_1_desc">Silahkan memilih layanan paket siangsa satu!</string>
+
+    <string name="slide_2_title">Layanan Paket Dua</string>
+    <string name="slide_2_desc">Silahkan memilih layanan paket siangsa dua!</string>
+
+    <string name="slide_3_title">Layanan Paket Tiga</string>
+    <string name="slide_3_desc">Silahkan memilih layanan paket siangsa tiga!</string>
+
+    <string name="slide_4_title">Layanan Paket Empat</string>
+    <string name="slide_4_desc">Silahkan memilih layanan paket siangsa empat!</string>
+
+    <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
+    <string name="play_again">Play Again</string>
 
 
 

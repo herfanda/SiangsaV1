@@ -39,8 +39,7 @@
                     android:editable="false"
                     android:textColor="@color/color_disabled"
                     android:text="S-14045"
-                    android:maxLength="15"
-                    />
+                    android:maxLength="15" />
             </TableRow>
             <TableRow>
                 <TextView
@@ -62,9 +61,9 @@
                     android:text="Dedek Cantik"
                     android:maxLength="50"
                     android:editable="false"
-                    android:textColor="@color/color_disabled"
-                    />
+                    android:textColor="@color/color_disabled"/>
             </TableRow>
+
             <TableRow>
                 <TextView
                     android:id="@+id/id_alamat"
@@ -85,8 +84,7 @@
                     android:text="Jalan Kedung Cina, RT 4 RW 5 no 10, Kec. Bandengan"
                     android:maxLength="100"
                     android:editable="false"
-                    android:textColor="@color/color_disabled"
-                    />
+                    android:textColor="@color/color_disabled" />
             </TableRow>
             <TableRow>
                 <TextView
@@ -108,8 +106,8 @@
                     android:text="0812345678910"
                     android:maxLength="32"
                     android:editable="false"
-                    android:textColor="@color/color_disabled"
-                    />
+                    android:textColor="@color/color_disabled" />
+
             </TableRow>
 
             <TableRow>
@@ -118,7 +116,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/label_email"
-
                     android:textColor="@color/default_black"
                     android:layout_weight="1"
                     android:layout_marginTop="@dimen/length_5"
@@ -133,8 +130,8 @@
                     android:text="siangsa@angsabebek.com"
                     android:maxLength="32"
                     android:editable="false"
-                    android:textColor="@color/color_disabled"
-                    />
+                    android:textColor="@color/color_disabled" />
+
             </TableRow>
         </TableLayout>
 
