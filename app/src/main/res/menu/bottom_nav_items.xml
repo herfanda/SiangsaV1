@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_profile"
+        android:title="@string/btm_menu_profile"
+        android:icon="@drawable/ic_btm_profile"
+        />
+
+    <item
+        android:id="@+id/menu_notifications"
+        android:title="@string/btm_menu_notif"
+        android:icon="@drawable/ic_btn_notif"
+        />
+
+    <item
+        android:id="@+id/menu_messages"
+        android:title="@string/btm_menu_message"
+        android:icon="@drawable/ic_btm_message" />
+
+    <item
+        android:id="@+id/menu_logout"
+        android:title="@string/btm_menu_logout"
+        android:icon="@drawable/ic_btm_logout" />
+</menu>
