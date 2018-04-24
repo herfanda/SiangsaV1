@@ -1,7 +1,6 @@
 package id.yeha.siangsav1.fragment;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,12 +20,14 @@ public class MenuFragment extends Fragment{
     private TextView txtView;
 
     public static Fragment newInstance(String text, int color) {
-        Fragment frag = new MenuFragment();
-        Bundle args = new Bundle();
-        args.putString(TEXT, text);
-        args.putInt(COLOR, color);
-        frag.setArguments(args);
-        return frag;
+
+        Fragment fragment = new MenuFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString(TEXT, text);
+        bundle.putInt(COLOR, color);
+        fragment.setArguments(bundle);
+        return fragment;
+
     }
 
 
@@ -38,7 +39,8 @@ public class MenuFragment extends Fragment{
     }
 
     @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+
+    public void onViewCreated(View view,Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         // retrieve text and color from bundle or savedInstanceState

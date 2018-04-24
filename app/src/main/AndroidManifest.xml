@@ -21,19 +21,16 @@
 
         <activity
             android:name=".activity.LoginActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize">
         </activity>
 
         <activity
             android:name=".activity.HomePageActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize">
         </activity>
 
-
-        <activity
-            android:name=".activity.PaketActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
 
     </application>
 
