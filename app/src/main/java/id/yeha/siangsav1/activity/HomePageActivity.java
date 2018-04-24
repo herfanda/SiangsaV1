@@ -2,10 +2,13 @@ package id.yeha.siangsav1.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.ActionBar;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -20,6 +23,8 @@ import android.widget.Toast;
 import id.yeha.siangsav1.R;
 import id.yeha.siangsav1.fragment.FragmentLayanan;
 import id.yeha.siangsav1.fragment.FragmentPaket;
+import id.yeha.siangsav1.fragment.MenuFragment;
+import id.yeha.siangsav1.util.Global;
 
 public class HomePageActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -30,15 +35,18 @@ public class HomePageActivity extends AppCompatActivity
     private ActionBarDrawerToggle toggle;
     private NavigationView navigationView;
     private Toolbar toolbar;
+    private Fragment fragment;
+    private static final String SELECTED_ITEM = "SELECTED_ITEM";
+    private BottomNavigationView bottomNavigation;
+    private int selectedItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initComponentLayout();
+        initEventBottomNav(savedInstanceState);
         displayView(R.id.nav_paket);
-
-
     }
 
     private void displayView(int viewId){
@@ -68,29 +76,74 @@ public class HomePageActivity extends AppCompatActivity
 
         navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        bottomNavigation = findViewById(R.id.bottom_navigation);
+
+    }
+
+    private void initEventBottomNav(Bundle savedInstanceState){
+
+        bottomNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                selectFragment(item);
+
+                return true;
+            }
+        });
+
+        MenuItem selectedMenuItem;
+        if (savedInstanceState != null) {
+            selectedItem = savedInstanceState.getInt(SELECTED_ITEM, 0);
+            selectedMenuItem = bottomNavigation.getMenu().findItem(selectedItem);
+        } else {
+            selectedMenuItem = bottomNavigation.getMenu().getItem(0);
+        }
+        selectFragment(selectedMenuItem);
+
     }
 
     @Override
-    public void onBackPressed() {
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putInt(SELECTED_ITEM, selectedItem);
+        super.onSaveInstanceState(outState);
+    }
 
+
+    @Override
+    public void onBackPressed() {
+        MenuItem homeItem = bottomNavigation.getMenu().getItem(0);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        } else {
+        }
+
+        if (selectedItem != homeItem.getItemId()){
+            selectFragment(homeItem);
+        }
+
+        else {
             super.onBackPressed();
         }
 
-        if (!viewIsAtHome) { //if the current view is not the Halaman Paket
-            //displayView(R.id.nav_paket); //display the News fragment
+        //if the current view is not the Halaman Paket
+        //displayView(R.id.nav_paket); //display the News fragment
+
+        if (!viewIsAtHome) {
         } else {
-            moveTaskToBack(true);  //If view is in News fragment, exit application
+            //If view is in News fragment, exit application
+            moveTaskToBack(true);
         }
+
+
     }
 
+
+    // Left menu navigation
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
-        Fragment fragment = null;
 
         switch (item.getItemId()){
             case R.id.nav_paket:
@@ -119,16 +172,68 @@ public class HomePageActivity extends AppCompatActivity
 
         }
 
-        if (fragment != null){
-            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.content_frame, fragment);
-            ft.commit();
-        }
+        commitFragment();
 
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
 
 
         return true;
+    }
+
+    // Bottom Navigation
+    private void selectFragment(MenuItem item) {
+        // init corresponding fragment
+        int colorProfile = getResources().getColor(R.color.orange_200);
+        int colorNotifications = getResources().getColor(R.color.orange_300);
+        int colorMessage = getResources().getColor(R.color.orange_400);
+
+
+        switch (item.getItemId()) {
+            case R.id.menu_profile:
+                fragment = MenuFragment.newInstance(getString(R.string.btm_menu_profile),
+                       colorProfile);
+                break;
+            case R.id.menu_notifications:
+                fragment = MenuFragment.newInstance(getString(R.string.btm_menu_notif),colorNotifications);
+                break;
+            case R.id.menu_messages:
+                fragment = MenuFragment.newInstance(getString(R.string.btm_menu_notif),colorMessage);
+                break;
+            case R.id.menu_logout:
+                break;
+        }
+
+        // update selected item
+        selectedItem = item.getItemId();
+
+        // uncheck the other items.
+        for (int i = 0; i< bottomNavigation.getMenu().size(); i++) {
+            MenuItem menuItem = bottomNavigation.getMenu().getItem(i);
+            menuItem.setChecked(menuItem.getItemId() == item.getItemId());
+        }
+
+        updateToolbarText(item.getTitle());
+
+        /*if (frag != null) {
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.add(R.id.container, frag, frag.getTag());
+            ft.commit();
+        }*/
+        commitFragment();
+    }
+
+    private void commitFragment(){
+        if (fragment != null){
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.content_frame, fragment);
+            ft.commit();
+        }
+    }
+    private void updateToolbarText(CharSequence text) {
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setTitle(text);
+        }
     }
 }
