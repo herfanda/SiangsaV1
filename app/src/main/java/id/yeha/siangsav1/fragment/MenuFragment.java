@@ -20,12 +20,14 @@ public class MenuFragment extends Fragment{
     private TextView txtView;
 
     public static Fragment newInstance(String text, int color) {
+
         Fragment fragment = new MenuFragment();
         Bundle bundle = new Bundle();
         bundle.putString(TEXT, text);
         bundle.putInt(COLOR, color);
         fragment.setArguments(bundle);
         return fragment;
+
     }
 
 
@@ -37,6 +39,7 @@ public class MenuFragment extends Fragment{
     }
 
     @Override
+
     public void onViewCreated(View view,Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
