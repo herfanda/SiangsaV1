@@ -18,6 +18,7 @@
     <string name="btm_menu_profile">Profile</string>
     <string name="btm_menu_notif">Pemberitahuan</string>
     <string name="btm_menu_message">Pesan</string>
+    <string name="btm_menu_about">Tentang</string>
     <string name="btm_menu_logout">Keluar</string>
 
     <string name="txt_welcome_login">Selamat datang di layanan SIANGSA !</string>

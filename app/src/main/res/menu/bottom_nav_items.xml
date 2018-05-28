@@ -18,6 +18,11 @@
         android:icon="@drawable/ic_btm_message" />
 
     <item
+        android:id="@+id/menu_about"
+        android:title="@string/btm_menu_about"
+        android:icon="@drawable/ic_btm_about_apps" />
+
+    <item
         android:id="@+id/menu_logout"
         android:title="@string/btm_menu_logout"
         android:icon="@drawable/ic_btm_logout" />

@@ -19,6 +19,14 @@ import id.yeha.siangsav1.R;
 import id.yeha.siangsav1.fragment.FragmentLayanan;
 import id.yeha.siangsav1.fragment.FragmentPaket;
 import id.yeha.siangsav1.fragment.MenuFragment;
+import id.yeha.siangsav1.util.Global;
+
+
+/*
+* Home Page Bottom and Left Navigation
+*
+* */
+
 
 public class HomePageActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -40,12 +48,12 @@ public class HomePageActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         initComponentLayout();
         initEventBottomNav(savedInstanceState);
-        displayView(R.id.nav_paket);
+        displayView(Global.NAV_PAKET);
     }
 
     private void displayView(int viewId) {
         Fragment fragment = null;
-        if (viewId == R.id.nav_paket) {
+        if (viewId == Global.NAV_PAKET) {
             viewIsAtHome = true;
             fragment = new FragmentPaket();
         }
@@ -77,7 +85,7 @@ public class HomePageActivity extends AppCompatActivity
 
     private void initEventBottomNav(Bundle savedInstanceState) {
 
-        bottomNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        /*bottomNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
@@ -85,7 +93,9 @@ public class HomePageActivity extends AppCompatActivity
 
                 return true;
             }
-        });
+        });*/
+
+        bottomNavigation.setOnSelected
 
         MenuItem selectedMenuItem;
         if (savedInstanceState != null) {
@@ -138,26 +148,26 @@ public class HomePageActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
 
         switch (item.getItemId()) {
-            case R.id.nav_paket:
+            case Global.NAV_PAKET:
                 viewIsAtHome = true;
                 fragment = new FragmentPaket();
                 break;
 
-            case R.id.nav_layanan:
+            case Global.NAV_LAYANAN:
                 viewIsAtHome = false;
                 fragment = new FragmentLayanan();
                 break;
 
-            case R.id.nav_tagihan:
+            case Global.NAV_TAGIHAN:
                 viewIsAtHome = false;
                 Toast.makeText(getApplicationContext(), "Page Tagihan Not Ready", Toast.LENGTH_LONG).show();
                 break;
 
-            case R.id.nav_lapor:
+            case Global.NAV_LAPOR:
                 viewIsAtHome = false;
                 Toast.makeText(getApplicationContext(), "Page Lapor Not Ready", Toast.LENGTH_LONG).show();
                 break;
-            case R.id.nav_info:
+            case Global.NAV_INFO:
                 viewIsAtHome = false;
                 Toast.makeText(getApplicationContext(), "Page Info Not Ready", Toast.LENGTH_LONG).show();
                 break;
@@ -192,6 +202,11 @@ public class HomePageActivity extends AppCompatActivity
             case R.id.menu_messages:
                 fragment = MenuFragment.newInstance(getString(R.string.btm_menu_notif), colorMessage);
                 break;
+
+            case R.id.menu_about:
+                fragment = MenuFragment.newInstance(getString(R.string.btm_menu_about), colorMessage);
+                break;
+
             case R.id.menu_logout:
                 break;
         }
