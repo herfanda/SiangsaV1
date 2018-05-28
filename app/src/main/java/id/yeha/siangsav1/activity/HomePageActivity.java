@@ -3,12 +3,12 @@ package id.yeha.siangsav1.activity;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.ActionBar;
-import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -43,13 +43,13 @@ public class HomePageActivity extends AppCompatActivity
         displayView(R.id.nav_paket);
     }
 
-    private void displayView(int viewId){
+    private void displayView(int viewId) {
         Fragment fragment = null;
-        if (viewId == R.id.nav_paket){
+        if (viewId == R.id.nav_paket) {
             viewIsAtHome = true;
             fragment = new FragmentPaket();
         }
-        if (fragment != null){
+        if (fragment != null) {
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.content_frame, fragment);
             ft.commit();
@@ -57,7 +57,7 @@ public class HomePageActivity extends AppCompatActivity
 
     }
 
-    private void initComponentLayout(){
+    private void initComponentLayout() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -75,7 +75,7 @@ public class HomePageActivity extends AppCompatActivity
 
     }
 
-    private void initEventBottomNav(Bundle savedInstanceState){
+    private void initEventBottomNav(Bundle savedInstanceState) {
 
         bottomNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -112,11 +112,9 @@ public class HomePageActivity extends AppCompatActivity
             drawer.closeDrawer(GravityCompat.START);
         }
 
-        if (selectedItem != homeItem.getItemId()){
+        if (selectedItem != homeItem.getItemId()) {
             selectFragment(homeItem);
-        }
-
-        else {
+        } else {
             super.onBackPressed();
         }
 
@@ -139,7 +137,7 @@ public class HomePageActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
 
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.nav_paket:
                 viewIsAtHome = true;
                 fragment = new FragmentPaket();
@@ -152,16 +150,16 @@ public class HomePageActivity extends AppCompatActivity
 
             case R.id.nav_tagihan:
                 viewIsAtHome = false;
-                Toast.makeText(getApplicationContext(),"Page Tagihan Not Ready",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Page Tagihan Not Ready", Toast.LENGTH_LONG).show();
                 break;
 
             case R.id.nav_lapor:
                 viewIsAtHome = false;
-                Toast.makeText(getApplicationContext(),"Page Lapor Not Ready",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Page Lapor Not Ready", Toast.LENGTH_LONG).show();
                 break;
             case R.id.nav_info:
                 viewIsAtHome = false;
-                Toast.makeText(getApplicationContext(),"Page Info Not Ready",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Page Info Not Ready", Toast.LENGTH_LONG).show();
                 break;
 
         }
@@ -186,13 +184,13 @@ public class HomePageActivity extends AppCompatActivity
         switch (item.getItemId()) {
             case R.id.menu_profile:
                 fragment = MenuFragment.newInstance(getString(R.string.btm_menu_profile),
-                       colorProfile);
+                        colorProfile);
                 break;
             case R.id.menu_notifications:
-                fragment = MenuFragment.newInstance(getString(R.string.btm_menu_notif),colorNotifications);
+                fragment = MenuFragment.newInstance(getString(R.string.btm_menu_notif), colorNotifications);
                 break;
             case R.id.menu_messages:
-                fragment = MenuFragment.newInstance(getString(R.string.btm_menu_notif),colorMessage);
+                fragment = MenuFragment.newInstance(getString(R.string.btm_menu_notif), colorMessage);
                 break;
             case R.id.menu_logout:
                 break;
@@ -202,7 +200,7 @@ public class HomePageActivity extends AppCompatActivity
         selectedItem = item.getItemId();
 
         // uncheck the other items.
-        for (int i = 0; i< bottomNavigation.getMenu().size(); i++) {
+        for (int i = 0; i < bottomNavigation.getMenu().size(); i++) {
             MenuItem menuItem = bottomNavigation.getMenu().getItem(i);
             menuItem.setChecked(menuItem.getItemId() == item.getItemId());
         }
@@ -217,13 +215,14 @@ public class HomePageActivity extends AppCompatActivity
         commitFragment();
     }
 
-    private void commitFragment(){
-        if (fragment != null){
+    private void commitFragment() {
+        if (fragment != null) {
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.content_frame, fragment);
             ft.commit();
         }
     }
+
     private void updateToolbarText(CharSequence text) {
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
