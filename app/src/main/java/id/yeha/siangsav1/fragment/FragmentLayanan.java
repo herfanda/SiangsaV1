@@ -17,6 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import id.yeha.siangsav1.R;
+import id.yeha.siangsav1.util.Global;
 
 public class FragmentLayanan extends Fragment {
 
@@ -33,7 +34,7 @@ public class FragmentLayanan extends Fragment {
 
         if (view == null){
             // Making notification bar transparent
-            if (Build.VERSION.SDK_INT >= 21) {
+            if (Global.OS_VERSION_LOLLIPOP) {
                 getActivity().getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
             }
             view = inflater.inflate(R.layout.side_menu_layanan,container,false);
