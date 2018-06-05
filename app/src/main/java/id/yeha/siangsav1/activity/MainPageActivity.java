@@ -28,7 +28,7 @@ import id.yeha.siangsav1.util.Global;
 * */
 
 
-public class HomePageActivity extends AppCompatActivity
+public class MainPageActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private boolean viewIsAtHome;
     private FragmentPaket fragmentPaket;
@@ -95,7 +95,7 @@ public class HomePageActivity extends AppCompatActivity
             }
         });*/
 
-        bottomNavigation.setOnSelected
+        //bottomNavigation.setOnSelected
 
         MenuItem selectedMenuItem;
         if (savedInstanceState != null) {
