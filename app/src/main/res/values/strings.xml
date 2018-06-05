@@ -6,12 +6,20 @@
     <string name="nav_header_username">Dedek Cantik</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-    
+
+    <!--Left Menu-->
     <string name="left_menu_paket">Paket</string>
     <string name="left_menu_layanan">Layanan</string>
     <string name="left_menu_tagihan">Tagihan</string>
-    <string name="left_menu_lapor">Laport</string>
+    <string name="left_menu_lapor">Lapor</string>
     <string name="left_menu_info">Info</string>
+
+    <!--Bottom Menu-->
+    <string name="btm_menu_profile">Profile</string>
+    <string name="btm_menu_notif">Pemberitahuan</string>
+    <string name="btm_menu_message">Pesan</string>
+    <string name="btm_menu_about">Tentang</string>
+    <string name="btm_menu_logout">Keluar</string>
 
     <string name="txt_welcome_login">Selamat datang di layanan SIANGSA !</string>
     <string name="txt_welcome_login_details">Masukan data email dan kata sandi Anda dengan benar untuk masuk ke dashboard akun</string>
