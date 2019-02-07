@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/logo_siangsa"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/length_40"
+            android:background="@color/orange_700"
+            android:src="@drawable/icon_dashboard_new" />
+
+
+        <TextView
+            android:id="@+id/text_welcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="nDaftar"
+            android:textStyle="bold"
+            android:textColor="@color/orange_700"
+            android:textSize="15pt"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/length_10"
+            android:layout_below="@id/logo_siangsa"/>
+
+
+        <EditText
+            android:id="@+id/edt_username_regis"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_edittext"
+            android:hint="username"
+            android:drawablePadding="8dp"
+            android:paddingLeft="@dimen/length_10"
+            android:drawableLeft="@drawable/ic_person"
+            android:layout_below="@+id/text_welcome_details"
+            android:singleLine="true"
+            android:layout_marginLeft="@dimen/length_10"
+            android:layout_marginRight="@dimen/length_10"
+            android:layout_marginBottom="@dimen/length_10"
+            android:inputType="text"/>
+
+        <EditText
+            android:id="@+id/edt_email_regis"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_edittext"
+            android:hint="email"
+            android:drawablePadding="8dp"
+            android:paddingLeft="@dimen/length_10"
+            android:drawableLeft="@drawable/ic_icon_email"
+            android:layout_below="@id/edt_username_regis"
+            android:singleLine="true"
+            android:layout_marginLeft="@dimen/length_10"
+            android:layout_marginRight="@dimen/length_10"
+            android:layout_marginBottom="@dimen/length_30"
+            android:layout_marginTop="@dimen/length_20"
+            android:inputType="textEmailAddress"/>
+
+        <EditText
+            android:id="@+id/edt_password_regis"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_edittext"
+            android:hint="password"
+            android:drawablePadding="8dp"
+            android:paddingLeft="@dimen/length_10"
+            android:drawableLeft="@drawable/ic_icon_lock"
+            android:layout_below="@+id/edt_email_regis"
+            android:singleLine="true"
+            android:layout_marginLeft="@dimen/length_10"
+            android:layout_marginRight="@dimen/length_10"
+            android:layout_marginBottom="@dimen/length_10"
+            android:inputType="textPassword"/>
+
+        <EditText
+            android:id="@+id/edt_noHp_regis"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_edittext"
+            android:hint="No Handphone"
+            android:drawablePadding="8dp"
+            android:paddingLeft="@dimen/length_10"
+            android:drawableLeft="@drawable/ic_phone"
+            android:layout_below="@id/edt_password_regis"
+            android:singleLine="true"
+            android:layout_marginLeft="@dimen/length_10"
+            android:layout_marginRight="@dimen/length_10"
+            android:layout_marginBottom="@dimen/length_30"
+            android:layout_marginTop="@dimen/length_20"
+            android:inputType="phone"/>
+
+        <EditText
+            android:id="@+id/edt_total_family_regis"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_edittext"
+            android:hint="Jumlah Anggota Keluarga"
+            android:drawablePadding="8dp"
+            android:paddingLeft="@dimen/length_10"
+            android:drawableLeft="@drawable/ic_total_familly"
+            android:layout_below="@id/edt_noHp_regis"
+            android:singleLine="true"
+            android:layout_marginLeft="@dimen/length_10"
+            android:layout_marginRight="@dimen/length_10"
+            android:layout_marginBottom="@dimen/length_30"
+            android:inputType="number"/>
+
+        <Button
+            android:id="@+id/btn_next_regis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edt_noHp_regis"
+            android:layout_marginTop="@dimen/length_10"
+            android:layout_marginRight="@dimen/length_10"
+            android:layout_marginLeft="@dimen/length_10"
+            android:layout_marginBottom="@dimen/length_40"
+            android:background="@layout/rounded_regis"
+            android:textColor="#FFFFFF"
+            android:text="Lanjutno"/>
+
+    </LinearLayout>
+
+</ScrollView>
+

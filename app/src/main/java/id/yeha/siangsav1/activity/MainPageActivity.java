@@ -1,5 +1,7 @@
 package id.yeha.siangsav1.activity;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -10,6 +12,7 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -80,6 +83,7 @@ public class MainPageActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         bottomNavigation = findViewById(R.id.bottom_navigation);
+        bottomNavigation.setOnNavigationItemSelectedListener(bottomNavigationListener);
 
     }
 
@@ -183,6 +187,37 @@ public class MainPageActivity extends AppCompatActivity
         return true;
     }
 
+
+    private BottomNavigationView.OnNavigationItemSelectedListener bottomNavigationListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.menu_profile:
+                    toolbar.setTitle("MENU PROFILE");
+                    return true;
+                case R.id.menu_notifications:
+                    //fragment = MenuFragment.newInstance(getString(R.string.btm_menu_notif), colorNotifications);
+                    toolbar.setTitle("MENU NOTIFIKASI");
+                    return true;
+                case R.id.menu_messages:
+                    //fragment = MenuFragment.newInstance(getString(R.string.btm_menu_notif), colorMessage);
+                    toolbar.setTitle("MENU PESAN");
+                    return true;
+
+                case R.id.menu_about:
+                    //fragment = MenuFragment.newInstance(getString(R.string.btm_menu_about), colorMessage);
+                    toolbar.setTitle("MENU TENTANG");
+                    return true;
+
+                case R.id.menu_logout:
+                    alertLogout();
+                    return true;
+            }
+
+            return false;
+        }
+    };
+
     // Bottom Navigation
     private void selectFragment(MenuItem item) {
         // init corresponding fragment
@@ -208,6 +243,7 @@ public class MainPageActivity extends AppCompatActivity
                 break;
 
             case R.id.menu_logout:
+                alertLogout();
                 break;
         }
 
@@ -228,6 +264,30 @@ public class MainPageActivity extends AppCompatActivity
             ft.commit();
         }*/
         commitFragment();
+    }
+
+    private void alertLogout(){
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+        alertDialogBuilder.setMessage("Apakah Anda yakin ingin keluar dari aplikasi Siangsa ? ");
+                alertDialogBuilder.setPositiveButton("yes",
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface arg0, int arg1) {
+                                startActivity(new Intent(MainPageActivity.this,ActivityOptionChoose.class));
+                                finish();
+                                Toast.makeText(MainPageActivity.this,"Sampai Jumpa Kembali",Toast.LENGTH_LONG).show();
+                            }
+                        });
+
+        alertDialogBuilder.setNegativeButton("No",new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+            }
+        });
+
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
     }
 
     private void commitFragment() {
