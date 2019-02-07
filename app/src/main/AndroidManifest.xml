@@ -26,7 +26,19 @@
         </activity>
 
         <activity
+            android:name=".activity.ActivityRegister"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+        </activity>
+
+        <activity
             android:name=".activity.MainPageActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+        </activity>
+
+        <activity
+            android:name=".activity.ActivityOptionChoose"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateHidden|adjustResize">
         </activity>

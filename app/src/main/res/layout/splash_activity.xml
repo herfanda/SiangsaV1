@@ -4,11 +4,11 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_splash">
+    android:background="@color/orange_800">
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/splash"/>
+        android:background="@drawable/splash_screen"/>
 
 </LinearLayout>

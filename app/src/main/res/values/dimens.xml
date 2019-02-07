@@ -11,6 +11,10 @@
     <dimen name="length_20">20dp</dimen>
     <dimen name="length_30">30dp</dimen>
     <dimen name="length_40">40dp</dimen>
+    <dimen name="length_50">50dp</dimen>
+    <dimen name="length_60">60dp</dimen>
+    <dimen name="length_70">70dp</dimen>
+
 
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="dots_height">30dp</dimen>

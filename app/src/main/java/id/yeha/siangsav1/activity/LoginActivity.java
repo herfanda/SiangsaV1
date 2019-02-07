@@ -87,4 +87,10 @@ public class LoginActivity extends AppCompatActivity {
     private void login(String username, EditText password){
 
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(this,ActivityOptionChoose.class));
+    }
 }

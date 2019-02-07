@@ -23,6 +23,7 @@
 
     <string name="txt_welcome_login">Selamat datang di layanan SIANGSA !</string>
     <string name="txt_welcome_login_details">Masukan data email dan kata sandi Anda dengan benar untuk masuk ke dashboard akun</string>
+    <string name="txt_welcome_regis_details">Masukan data sesuai kolom di bawah ini dengan benar untuk mendaftar</string>
     <string name="txt_login_email">Email</string>
     <string name="txt_login_password">Password</string>
     <string name="txt_login_forgot"><u>Lupa Kata Sandi</u></string>
@@ -52,6 +53,8 @@
 
     <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
     <string name="play_again">Play Again</string>
+
+    <string name="warning_complete_regis_data">Mohon Lengkapi Data Anda</string>
 
 
 
