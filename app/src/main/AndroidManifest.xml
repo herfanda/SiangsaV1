@@ -26,7 +26,7 @@
         </activity>
 
         <activity
-            android:name=".activity.HomePageActivity"
+            android:name=".activity.MainPageActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateHidden|adjustResize">
         </activity>
