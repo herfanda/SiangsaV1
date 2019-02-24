@@ -14,12 +14,20 @@
     <string name="left_menu_lapor">Lapor</string>
     <string name="left_menu_info">Info</string>
 
+    <!--NEW Left Menu-->
+    <string name="left_menu_status_langganan">Status Langganan</string>
+
     <!--Bottom Menu-->
     <string name="btm_menu_profile">Profile</string>
     <string name="btm_menu_notif">Pemberitahuan</string>
     <string name="btm_menu_message">Pesan</string>
     <string name="btm_menu_about">Tentang</string>
     <string name="btm_menu_logout">Keluar</string>
+
+    <!--New Bottom Menu-->
+    <string name="btm_menu_beranda">Beranda</string>
+    <string name="btm_menu_paket">Paket</string>
+    <string name="btm_menu_bantuan">Bantuan</string>
 
     <string name="txt_welcome_login">Selamat datang di layanan SIANGSA !</string>
     <string name="txt_welcome_login_details">Masukan data email dan kata sandi Anda dengan benar untuk masuk ke dashboard akun</string>

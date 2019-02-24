@@ -51,12 +51,12 @@ public class MainPageActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         initComponentLayout();
         initEventBottomNav(savedInstanceState);
-        displayView(Global.NAV_PAKET);
+        displayView(Global.NAV_LANGGANAN);
     }
 
     private void displayView(int viewId) {
         Fragment fragment = null;
-        if (viewId == Global.NAV_PAKET) {
+        if (viewId == Global.NAV_LANGGANAN) {
             viewIsAtHome = true;
             fragment = new FragmentPaket();
         }
@@ -152,17 +152,17 @@ public class MainPageActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
 
         switch (item.getItemId()) {
-            case Global.NAV_PAKET:
+            case Global.NAV_LANGGANAN:
                 viewIsAtHome = true;
                 fragment = new FragmentPaket();
                 break;
 
-            case Global.NAV_LAYANAN:
+            case Global.NAV_TAGIHAN:
                 viewIsAtHome = false;
                 fragment = new FragmentLayanan();
                 break;
 
-            case Global.NAV_TAGIHAN:
+            /*case Global.NAV_TAGIHAN:
                 viewIsAtHome = false;
                 Toast.makeText(getApplicationContext(), "Page Tagihan Not Ready", Toast.LENGTH_LONG).show();
                 break;
@@ -174,7 +174,7 @@ public class MainPageActivity extends AppCompatActivity
             case Global.NAV_INFO:
                 viewIsAtHome = false;
                 Toast.makeText(getApplicationContext(), "Page Info Not Ready", Toast.LENGTH_LONG).show();
-                break;
+                break;*/
 
         }
 
@@ -192,21 +192,14 @@ public class MainPageActivity extends AppCompatActivity
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
-                case R.id.menu_profile:
-                    toolbar.setTitle("MENU PROFILE");
+                case R.id.menu_beranda:
+                    toolbar.setTitle("MENU BERANDA");
                     return true;
-                case R.id.menu_notifications:
-                    //fragment = MenuFragment.newInstance(getString(R.string.btm_menu_notif), colorNotifications);
-                    toolbar.setTitle("MENU NOTIFIKASI");
+                case R.id.menu_paket:
+                    toolbar.setTitle("MENU PAKET");
                     return true;
-                case R.id.menu_messages:
-                    //fragment = MenuFragment.newInstance(getString(R.string.btm_menu_notif), colorMessage);
-                    toolbar.setTitle("MENU PESAN");
-                    return true;
-
-                case R.id.menu_about:
-                    //fragment = MenuFragment.newInstance(getString(R.string.btm_menu_about), colorMessage);
-                    toolbar.setTitle("MENU TENTANG");
+                case R.id.menu_bantuan:
+                    toolbar.setTitle("MENU BANTUAN");
                     return true;
 
                 case R.id.menu_logout:
@@ -227,19 +220,15 @@ public class MainPageActivity extends AppCompatActivity
 
 
         switch (item.getItemId()) {
-            case R.id.menu_profile:
+            case R.id.menu_beranda:
                 fragment = MenuFragment.newInstance(getString(R.string.btm_menu_profile),
                         colorProfile);
                 break;
-            case R.id.menu_notifications:
+            case R.id.menu_paket:
                 fragment = MenuFragment.newInstance(getString(R.string.btm_menu_notif), colorNotifications);
                 break;
-            case R.id.menu_messages:
+            case R.id.menu_bantuan:
                 fragment = MenuFragment.newInstance(getString(R.string.btm_menu_notif), colorMessage);
-                break;
-
-            case R.id.menu_about:
-                fragment = MenuFragment.newInstance(getString(R.string.btm_menu_about), colorMessage);
                 break;
 
             case R.id.menu_logout:

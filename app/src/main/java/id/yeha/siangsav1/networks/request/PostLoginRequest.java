@@ -5,7 +5,7 @@ import com.android.volley.Request;
 public class PostLoginRequest extends BaseRequest {
 
     private static final String ACTION = "siangsaLogin";
-    private String username;
+    private String email;
     private String password;
 
     public PostLoginRequest(){
@@ -19,17 +19,17 @@ public class PostLoginRequest extends BaseRequest {
     @Override
     protected void populateSignatureParameters() {
 
-        signatureParameters.put("username",username);
+        signatureParameters.put("email",email);
         signatureParameters.put("password",password);
 
     }
 
-    public String getUsername() {
-        return username;
+    public String getEmail() {
+        return email;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {

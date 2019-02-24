@@ -4,13 +4,22 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+
+import org.json.JSONObject;
+
 import id.yeha.siangsav1.R;
+import id.yeha.siangsav1.networks.SiangsaApi;
+import id.yeha.siangsav1.networks.response.PostLoginResponse;
+import id.yeha.siangsav1.util.AppConfiguration;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -18,6 +27,8 @@ public class LoginActivity extends AppCompatActivity {
     private EditText edtPassword;
     private Button   btnLogin;
     private TextView txtForgot;
+
+    private String email, password;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -33,8 +44,8 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.btn_login);
         txtForgot = findViewById(R.id.txt_lupa);
 
-        edtEmail.setText("usertest");
-        edtPassword.setText("usertest");
+        /*edtEmail.setText("usertest");
+        edtPassword.setText("usertest");*/
 
     }
 
@@ -45,7 +56,8 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                initiateLogin();;
+                fillField();
+                initiateLogin();
             }
         });
 
@@ -61,9 +73,42 @@ public class LoginActivity extends AppCompatActivity {
     private void initiateLogin(){
 
         if (isValid()){
-            startActivity(new Intent(LoginActivity.this,MainPageActivity.class));
+            AppConfiguration.getInstance().getSiangsaApi().postLogin(email,password,getLoginSuccessListener(),getErrorListener());
+
+            //startActivity(new Intent(LoginActivity.this,MainPageActivity.class));
         }
 
+    }
+
+    private Response.Listener<JSONObject> getLoginSuccessListener(){
+        return new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                PostLoginResponse loginResponse = new PostLoginResponse(response);
+
+                if (loginResponse.isOk()){
+
+                    startActivity(new Intent(LoginActivity.this,MainPageActivity.class));
+                    finish();
+                }
+            }
+        };
+    }
+
+    private Response.ErrorListener getErrorListener(){
+        return new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e("MESSAGE","ERROR "+error.getMessage());
+                error.getMessage();
+            }
+        };
+
+    }
+
+    private void fillField(){
+        email = edtEmail.getText().toString();
+        password = edtPassword.getText().toString();
     }
 
     /*
