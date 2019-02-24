@@ -1,26 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/menu_profile"
-        android:title="@string/btm_menu_profile"
-        android:icon="@drawable/ic_btm_profile"
+        android:id="@+id/menu_beranda"
+        android:title="@string/btm_menu_beranda"
+        android:icon="@drawable/ic_beranda"
         />
 
     <item
-        android:id="@+id/menu_notifications"
-        android:title="@string/btm_menu_notif"
-        android:icon="@drawable/ic_btn_notif"
+        android:id="@+id/menu_paket"
+        android:title="@string/btm_menu_paket"
+        android:icon="@drawable/ic_paket"
         />
 
     <item
-        android:id="@+id/menu_messages"
-        android:title="@string/btm_menu_message"
-        android:icon="@drawable/ic_btm_message" />
-
-    <item
-        android:id="@+id/menu_about"
-        android:title="@string/btm_menu_about"
-        android:icon="@drawable/ic_btm_about_apps" />
+        android:id="@+id/menu_bantuan"
+        android:title="@string/btm_menu_bantuan"
+        android:icon="@drawable/ic_bantuan" />
 
     <item
         android:id="@+id/menu_logout"

@@ -4,13 +4,23 @@ import com.android.volley.Response;
 
 import org.json.JSONObject;
 
+import id.yeha.siangsav1.networks.request.PostLoginRequest;
 import id.yeha.siangsav1.networks.request.PostRegisRequest;
 import id.yeha.siangsav1.networks.request.VolleyJsonObjectRequest;
 import id.yeha.siangsav1.networks.urls.SiangsaUrl;
 
 public class SiangsaApi implements IfaceSiangsaApi {
     @Override
-    public void postLogin(String username, String password, Response.Listener<JSONObject> successListener, Response.ErrorListener errorListener) {
+    public void postLogin(String email, String password, Response.Listener<JSONObject> successListener, Response.ErrorListener errorListener) {
+        PostLoginRequest loginRequest = new PostLoginRequest();
+        String url = SiangsaUrl.getInstance().getUrl("postLogin");
+
+        loginRequest.setEmail(email);
+        loginRequest.setPassword(password);
+
+        JSONObject jsonParameter = loginRequest.generateJsonParameter();
+        VolleyJsonObjectRequest request = new VolleyJsonObjectRequest(loginRequest.getMethod(),url,jsonParameter,successListener,errorListener);
+        VolleySingleton.getInstance().addToRequestQueue(request);
 
     }
 

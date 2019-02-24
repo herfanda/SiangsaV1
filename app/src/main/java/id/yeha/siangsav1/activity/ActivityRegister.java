@@ -129,7 +129,6 @@ public class ActivityRegister extends AppCompatActivity implements AdapterView.O
         return new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(ActivityRegister.this,"message"+error.getMessage(),Toast.LENGTH_SHORT).show();
                 Log.e("MESSAGE","ERROR "+error.getMessage());
                 error.getMessage();
             }
