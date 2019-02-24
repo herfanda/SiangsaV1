@@ -23,7 +23,7 @@
             android:id="@+id/text_welcome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="nDaftar"
+            android:text="Daftar"
             android:textStyle="bold"
             android:textColor="@color/orange_700"
             android:textSize="15pt"
@@ -37,7 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:background="@drawable/bg_edittext"
-            android:hint="username"
+            android:hint="Nama Lengkap"
             android:drawablePadding="8dp"
             android:paddingLeft="@dimen/length_10"
             android:drawableLeft="@drawable/ic_person"
@@ -53,7 +53,7 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:background="@drawable/bg_edittext"
-            android:hint="email"
+            android:hint="Email"
             android:drawablePadding="8dp"
             android:paddingLeft="@dimen/length_10"
             android:drawableLeft="@drawable/ic_icon_email"
@@ -70,7 +70,7 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:background="@drawable/bg_edittext"
-            android:hint="password"
+            android:hint="Password"
             android:drawablePadding="8dp"
             android:paddingLeft="@dimen/length_10"
             android:drawableLeft="@drawable/ic_icon_lock"
@@ -98,6 +98,21 @@
             android:layout_marginTop="@dimen/length_20"
             android:inputType="phone"/>
 
+        <Spinner
+            android:id="@+id/sp_layanan"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_edittext"
+            android:drawablePadding="8dp"
+            android:paddingLeft="@dimen/length_10"
+            android:drawableLeft="@drawable/ic_layanan"
+            android:layout_below="@id/edt_password_regis"
+            android:singleLine="true"
+            android:layout_marginLeft="@dimen/length_10"
+            android:layout_marginRight="@dimen/length_10"
+            android:layout_marginBottom="@dimen/length_30"/>
+
+
         <EditText
             android:id="@+id/edt_total_family_regis"
             android:layout_width="match_parent"
@@ -114,6 +129,22 @@
             android:layout_marginBottom="@dimen/length_30"
             android:inputType="number"/>
 
+        <EditText
+            android:id="@+id/edt_address"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_edittext"
+            android:hint="alamat"
+            android:drawablePadding="8dp"
+            android:paddingLeft="@dimen/length_10"
+            android:drawableLeft="@drawable/ic_alamat"
+            android:layout_below="@id/edt_total_family_regis"
+            android:singleLine="true"
+            android:layout_marginLeft="@dimen/length_10"
+            android:layout_marginRight="@dimen/length_10"
+            android:layout_marginBottom="@dimen/length_30"
+            android:inputType="text"/>
+
         <Button
             android:id="@+id/btn_next_regis"
             android:layout_width="match_parent"
@@ -125,7 +156,7 @@
             android:layout_marginBottom="@dimen/length_40"
             android:background="@layout/rounded_regis"
             android:textColor="#FFFFFF"
-            android:text="Lanjutno"/>
+            android:text="Daftar"/>
 
     </LinearLayout>
 

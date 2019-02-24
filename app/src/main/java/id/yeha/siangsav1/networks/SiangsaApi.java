@@ -20,19 +20,25 @@ public class SiangsaApi implements IfaceSiangsaApi {
     }
 
     @Override
-    public void postRegis(String username, String email, String password, String nohp, String totalFamily, Response.Listener<JSONObject> successListener, Response.ErrorListener errorListener) {
+    public void postRegis(String name, String email, String password, String nohp, String address, String lat, String lng, Integer layanan_id, String qty, String status, Response.Listener<JSONObject> successListener, Response.ErrorListener errorListener) {
         PostRegisRequest regisRequest = new PostRegisRequest();
         String url = SiangsaUrl.getInstance().getUrl("postRegistration");
 
-        regisRequest.setUsername(username);
+        regisRequest.setName(name);
         regisRequest.setEmail(email);
         regisRequest.setPassword(password);
         regisRequest.setNoHp(nohp);
-        regisRequest.setTotalFamily(totalFamily);
+        regisRequest.setAddress(address);
+        regisRequest.setLat(lat);
+        regisRequest.setLng(lng);
+        regisRequest.setLayanan_id(layanan_id);
+        regisRequest.setQuality(qty);
+        regisRequest.setStatus(status);
 
         JSONObject jsonParameter = regisRequest.generateJsonParameter();
         VolleyJsonObjectRequest request = new VolleyJsonObjectRequest(regisRequest.getMethod(),url,jsonParameter,successListener,errorListener);
         VolleySingleton.getInstance().addToRequestQueue(request);
     }
+
 
 }

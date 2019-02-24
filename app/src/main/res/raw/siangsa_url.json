@@ -1,6 +1,6 @@
 {
 
-  "postLogin" : "http://siangsa.com/login",
-  "postRegis" : "http://siangsa.com/daftar"
+  "postLogin" : "http://www.siangsa.com/api/login",
+  "postRegistration" : "http://www.siangsa.com/api/register"
 
 }

@@ -2,6 +2,7 @@ package id.yeha.siangsav1.networks;
 
 import android.content.Context;
 import android.os.Build;
+import android.text.TextUtils;
 import android.util.Log;
 
 import com.android.volley.AuthFailureError;
@@ -13,12 +14,16 @@ import com.android.volley.toolbox.Volley;
 
 import java.util.Map;
 
+import static android.content.ContentValues.TAG;
+
 public class VolleySingleton {
 
     private static final int TIMEOUT = 15000;
 
     private static VolleySingleton ourInstance = new VolleySingleton();
     private RequestQueue requestQueue;
+
+    private RequestQueue mRequestQueue;
 
     public static VolleySingleton getInstance() {
         return ourInstance;
@@ -97,5 +102,25 @@ public class VolleySingleton {
 
         getRequestQueue().add(req);
     }
+
+    //androidhive
+
+    public <T> void addToRequestQueue(Request<T> req, String tag) {
+        req.setTag(TextUtils.isEmpty(tag) ? TAG : tag);
+        getRequestQueue().add(req);
+    }
+
+    /*public <T> void addToRequestQueue(Request<T> req) {
+        req.setTag(TAG);
+        getRequestQueue().add(req);
+    }*/
+
+    public void cancelPendingRequests(Object tag) {
+        if (mRequestQueue != null) {
+            mRequestQueue.cancelAll(tag);
+        }
+    }
+
+
 
 }

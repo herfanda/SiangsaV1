@@ -25,7 +25,7 @@
         android:layout_marginBottom="@dimen/length_10"
         android:background="@layout/rounded_regis"
         android:textColor="@color/txt_white"
-        android:text="nDaftar"/>
+        android:text="Daftar"/>
 
     <Button
         android:id="@+id/btn_login_option"
@@ -38,6 +38,6 @@
         android:layout_marginBottom="@dimen/length_10"
         android:background="@layout/rounded_option"
         android:textColor="@color/orange_800"
-        android:text="Mashook"/>
+        android:text="Login"/>
 
 </LinearLayout>
